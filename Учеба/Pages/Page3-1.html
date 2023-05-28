@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Registration Form</title>
+    <style>
+        .user-details {
+            margin-top: 20px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/footer.css">
+
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="../index.html">Главная</a>
+        </li>
+        <li>
+            <a href="./Page1.html">Галлерея</a>
+        </li>
+        <li> <a href="./Page2.html">Таблица пользователей</a>
+        </li>
+        <li> <a href="./Page3.html">Формы</a>
+        </li>
+        <li> <a href="./Page3-1.html">Формы задача</a>
+        </li>
+    </ul>
+
+    <div class="container content card">
+        <fieldset>
+            <legend>User reg:</legend>
+            <form id="registrationForm">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </fieldset>
+        <div class="user-details" id="userDetails">
+            <!-- User details will be displayed here after form submission -->
+        </div>
+        <div class="footer">
+            <p>Contact Information: [Insert Contact Information Here]</p>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            document.getElementById('userDetails').innerHTML = `
+                <h2>User Details</h2>
+                <p>First Name: ${fname}</p>
+                <p>Last Name: ${lname}</p>
+                <p>Email: ${email}</p>
+                <p>Password: ${password}</p>
+            `;
+        });
+    </script>
+</body>
+
+</html>
