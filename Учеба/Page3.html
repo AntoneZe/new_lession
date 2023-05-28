@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML User Interaction Elements</title>
+    <style>
+        .element-block {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-block {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>п
+    <nav> <a href="./index.html">Назад</a>
+    </nav>
+    <div class="element-block">
+        <h2>Button</h2>
+        <p>Кнопки могут быть разных типов, включая "button", "submit" и "reset". "button" используется для кликабельной
+            кнопки, "submit" отправляет данные формы на сервер, а "reset" сбрасывает все поля формы до их начальных
+            значений.</p>
+        <button type="button">Button</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+
+    <div class="element-block">
+        <h2>Input</h2>
+        <p>Элемент input может быть разных типов, каждый из которых служит для различных целей. Например, "text"
+            используется для ввода текста, "password" для ввода паролей, "radio" для выбора одного варианта из
+            нескольких, "checkbox" для выбора любого количества вариантов, "submit" и "reset" для отправки и сброса
+            формы соответственно, "file" для загрузки файлов, "hidden" для хранения данных, которые не видны
+            пользователю, "image" для определения изображения в качестве кнопки отправки, "date" для выбора даты,
+            "color" для выбора цвета, "number" для ввода чисел и "range" для ввода диапазона чисел.</p>
+        <input type="text" placeholder="Text Input">
+        <input type="password" placeholder="Password Input">
+        <input type="radio" name="radio"> Radio Input
+        <input type="checkbox"> Checkbox Input
+        <input type="submit" value="Submit Input">
+        <input type="reset" value="Reset Input">
+        <input type="file" name="file">
+        <input type="hidden" name="hidden">
+        <input type="image"  alt="Image Input">
+        <input type="date" name="date">
+        <input type="color" name="color">
+        <input type="number" name="number">
+        <input type="range" name="range">
+    </div>
+
+
+    <div class="element-block">
+        <h2>Textarea</h2>
+        <p>Textarea используется для ввода многострочного текста.</p>
+        <textarea rows="4" cols="50">Enter text here...</textarea>
+    </div>
+
+    <div class="element-block">
+        <h2>Select</h2>
+        <p>Элемент select используется для создания выпадающего списка.</p>
+        <select>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+    </div>
+    <div class="element-block">
+        <h2>Datalist</h2>
+        <p>Элемент datalist предоставляет автозаполнение для элементов input. Он содержит набор предопределенных опций,
+            которые пользователи могут выбирать при вводе данных в поле input. Это удобно для форм, где ожидается
+            определенный набор ответов.</p>
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+    </div>
+
+    <div class="element-block">
+        <h2>Fieldset and Legend</h2>
+        <p>Элементы fieldset и legend используются для группировки связанных элементов формы и добавления заголовка к
+            группе соответственно. Fieldset обеспечивает визуальную группировку элементов, а legend предоставляет
+            описание для группы. Это полезно для улучшения доступности и организации форм.</p>
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname">
+        </fieldset>
+    </div>
+
+    <div class="element-block">
+        <h2>Label</h2>
+        <p>Элемент label предоставляет описание для элементов input. Он связывается с элементом input и улучшает
+            доступность, делая форму более понятной для пользователей с ограниченными возможностями. Когда пользователь
+            нажимает на label, фокус перемещается на связанный элемент input.</p>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname">
+    </div>
+
+    <div class="info-block">
+        <h2>&lt;form&gt; Tag</h2>
+        <p>The &lt;form&gt; tag is used to create an HTML form for user input. It has the following attributes:</p>
+        <ul>
+            <li><strong>action:</strong> The URL where to send the form data.</li>
+            <li><strong>method:</strong> The HTTP method to use for the request (GET, POST).</li>
+            <li><strong>enctype:</strong> The encoding type for the form data (for POST).</li>
+            <li><strong>target:</strong> Where to display the response.</li>
+            <li><strong>name:</strong> The name of the form.</li>
+            <li><strong>autocomplete:</strong> The autocomplete state for the form.</li>
+            <li><strong>novalidate:</strong> Bypass form validation when submitting.</li>
+            <li><strong>accept-charset:</strong> The character encodings for form submission.</li>
+        </ul>
+    </div>
+    </script>
+</body>
+
+</html>
+
+
+<!-- <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        document.getElementById('userDetails').innerHTML = `
+            <h2>User Details</h2>
+            <p>First Name: ${fname}</p>
+            <p>Last Name: ${lname}</p>
+            <p>Email: ${email}</p>
+            <p>Password: ${password}</p>
+        `;
+    });
+</script> -->
