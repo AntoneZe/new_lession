@@ -91,3 +91,9 @@ th {
 .flex-container>.w-100 {
     width: 100%;
 }
+
+.template {
+    grid-template-areas: 'header header header'
+                         'sidebar main main'
+                         'footer footer footer';
+}
