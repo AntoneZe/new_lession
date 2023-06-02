@@ -1,12 +1,47 @@
+/* Маленькие мобилки и базовые стили */
 .container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      'main'
-      'zalupa';
-  }
-  
+        'main'
+        'zalupa';
+}
+
+/* Смарфоны */
+@media only screen and (min-width: 768px) {
+    .container {
+        grid-template-areas:
+            'header'
+            'main'
+            'zalupa'
+            'footer';
+    }
+}
+
+/* Планшеты */
+@media only screen and (min-width: 992px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            'header header'
+            'main main'
+            'zalupa zalupa'
+            'footer footer';
+    }
+}
+
+/* Десктоп */
+@media only screen and (min-width: 1200px) {
+    .container {
+        grid-template-areas:
+            'header header'
+            'main sidebar'
+            'zalupa sidebar'
+            'footer footer';
+    }
+}
+
 .container>div {
     min-height: 150px;
 }
