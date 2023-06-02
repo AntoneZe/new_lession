@@ -16,10 +16,6 @@ figure {
     padding: 15px 0;
 }
 
-.container {
-    margin-bottom: 100px;
-}
-
 .card {
     margin-bottom: 24px;
     border: 1px solid rgba(0, 0, 0, 0.577);
@@ -48,10 +44,11 @@ figure {
 }
 
 .container {
-    max-width: 1254px;
-    margin: 0 auto;
-    padding: 0 15px;
+    background-color: antiquewhite;
+    margin: 0 15px;
+    margin-bottom: 100px;
 }
+
 
 table {
     width: 300px;
@@ -94,6 +91,124 @@ th {
 
 .template {
     grid-template-areas: 'header header header'
-                         'sidebar main main'
-                         'footer footer footer';
+        'sidebar main main'
+        'footer footer footer';
+}
+
+
+
+/* ================= Аадаптивная верстка 1 ============= */
+
+.grid-container>div {
+    min-height: 150px;
+
+}
+
+.grid-container>div:nth-child(1) {
+    background-color: red;
+    grid-area: header;
+}
+
+.grid-container>div:nth-child(2) {
+    background-color: green;
+    grid-area: main;
+
+}
+
+.grid-container>div:nth-child(3) {
+    background-color: tan;
+    grid-area: sidebar;
+
+}
+
+.grid-container>div:nth-child(4) {
+    background-color: teal;
+    grid-area: footer;
+
+}
+
+.grid-container>div:nth-child(5) {
+    background-color: seagreen;
+    grid-area: zalupa;
+
+}
+
+/* мини мобилка */
+
+@media screen and (max-width: 767px) {
+    .container {
+        display: none;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'main main main'
+            'main main main'
+            'zalupa zalupa zalupa'
+            'zalupa zalupa zalupa';
+    }
+
+    .grid-container>div:nth-child(1) {
+        display: none;
+    }
+
+
+}
+
+
+/* смартфон */
+@media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'header header header'
+            'main main main'
+            'main main main'
+            'zalupa zalupa zalupa'
+            'footer footer footer';
+    }
+
+
+    .container {
+        margin: 0;
+    }
+
+    .grid-container>div:nth-child(3) {
+        display: none;
+    }
+
+}
+
+/* планшет */
+@media (min-width: 992px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'header header sidebar'
+            'main main main'
+            'main main main'
+            'zalupa zalupa zalupa'
+            'footer footer footer';
+    }
+
+    .container {
+        width: calc(100% - 30px);
+    }
+}
+
+/* desctop */
+@media (min-width: 1200px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'header header header'
+            'main main sidebar'
+            'main main sidebar'
+            'zalupa zalupa sidebar'
+            'footer footer footer';
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 1170px;
+        padding: 0;
+    }
 }
